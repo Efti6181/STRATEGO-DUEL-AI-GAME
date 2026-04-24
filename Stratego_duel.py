@@ -450,7 +450,7 @@ class Game:
         self.sel=None; self.vm=[]; self.log=[]
         self.ai_on=False; self.ai_t=0
         self.hcap=0; self.acap=0; self.moves=0
-        self.ai_flag_revealed=False  # flag hidden during setup
+        self.ai_flag_revealed=False  
         self.ai_flag_pos=None
         for (r,c),p in self.ai.setup().items():
             self.board.put(r,c,p)
@@ -782,7 +782,7 @@ def main():
                 if e.key==pygame.K_F1 and game.phase=="setup": game.auto_fill()
                 if e.key==pygame.K_RETURN and game.phase=="setup":
                     if not game.rem():
-                        game.start_battle()  # reveals AI flag
+                        game.start_battle() 
                 if e.key==pygame.K_SPACE: game.sel=None; game.vm=[]
             if e.type==pygame.MOUSEBUTTONDOWN:
                 mx,my=e.pos; r,c=pxc(mx,my)
